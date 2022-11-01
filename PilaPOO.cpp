@@ -16,7 +16,6 @@ class Pila {
     int  pop ();
 };
 
-
 int main ()
 {
    Pila pila;
