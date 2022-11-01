@@ -1,4 +1,4 @@
-//			Frida Ximena Martinez Lorenzo 302-B
+//			Frida Ximena Martinez Lorenzo
 
 #include <iostream>
 #include <stdlib.h>
