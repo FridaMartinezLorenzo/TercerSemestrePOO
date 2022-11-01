@@ -36,7 +36,6 @@ int main ()
 			cout << " 5) Determinar si esta vacia" << endl;
 			cout << " 6) Determinar si esta llena" << endl;
 			cout << " 7) Salir \n OPC: " << endl;
-			
 			cin >> opc;
 		}while (opc < 1 || opc > 7);
 			
