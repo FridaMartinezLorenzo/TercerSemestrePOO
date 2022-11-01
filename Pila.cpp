@@ -21,7 +21,6 @@ bool estaLlena ( Pila *);
 bool push ( Pila *, int);
 int  pop (Pila *);
 
-
 int main ()
 {
 	Pila pila;
