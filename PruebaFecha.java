@@ -3,7 +3,7 @@ class Fecha{
     private int mes, an;
 
     public void inicializar (){
-        dia = mes = an =-1;
+        dia = mes = an = 0;
     }
 
     public boolean setDia(int day){
@@ -69,9 +69,6 @@ class Fecha{
     }
 
     public int getDia(){
-        if (dia == -1)
-            //System.out.println ("No se ha establecido el día");
-            return -1;
         return dia;   
     }
     public boolean setMes (int month){
@@ -81,8 +78,6 @@ class Fecha{
         return true;
     }
     public int getMes(){
-        if (mes == -1)
-            return -1;
         return mes;
     }
 
@@ -94,12 +89,10 @@ class Fecha{
     }
 
     public int getAn(){
-        if ( an == -1)
-            return -1;
         return an;
     }
     public boolean bisiesto(){
-        if (an % 4 == 0)
+    	if ((an % 400 == 0 || an % 4 == 0 ) && an % 100 != 0)
             return true;
         return false;
     }
@@ -150,6 +143,7 @@ public class PruebaFecha{
         if (!a.nextDay())
             System.out.println("Error en el proceso de día siguiente\n");
         else{
+            System.out.println("\nEl dia siguiente es: ");
             System.out.println("Dia: "+a.getDia());
             System.out.println("Mes: "+a.getMes());
             System.out.println("An: "+a.getAn());
