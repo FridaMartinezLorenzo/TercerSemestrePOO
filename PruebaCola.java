@@ -56,7 +56,5 @@ public class PruebaCola {
     System.out.println (b.get());
     System.out.println (pCola.get());
     System.out.println (pCola.get());
-
-
     }
 }
