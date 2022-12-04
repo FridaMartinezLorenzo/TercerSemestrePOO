@@ -3,25 +3,21 @@
 using namespace std;
 
 class Persona{
-    char *name,
-           sex;
-    int age;
-
-public: 
+	protected:
+        string name;
+        char sex;
+    	int age;
+	public: 
     Persona (){
-        name = (char *) malloc (sizeof (char));
-        if (name == NULL)
-            cout<<"No hay memoria";
-        name =NULL;
         sex = 'X';
         age = -1;
     }
 
-    void setName (char * n){
+    void setName ( string  n){
         name = n;
     }
 
-    char * getName (){
+    string getName (){
         return name;
     }
 
@@ -40,14 +36,20 @@ public:
     int getAge (){
         return age;
     }
+    
+    void show (){
+	cout <<"Nombre: "<<getName()<<endl;
+    cout <<"Sexo: "<<getSex()<<endl;
+	cout <<"Edad: "<<getAge()<<endl;
+	}
 };
 
-
+//___________________________________________________________________________________
 class Estudiante: public Persona
 {
 	int prom;
 	public:
-        void IniM (); 
+        //void IniM (); 
 		void setProm(int);
 		int getProm();
 		void show();
@@ -71,26 +73,19 @@ void Estudiante :: show (){
 //___________________________________________________________________________________________
 class Profesor: public Persona
 {
-	char *inst;
+	string inst;
 	public:
-        void IniM (); 
-		void setInst(char *);
-		char * getInst();
+    //    void IniM (); 
+		void setInst( string);
+		string getInst();
 		void show();
 };
 
-void Profesor :: IniM (){
-    inst = (char *) malloc (sizeof (char));
-    if (inst  == NULL)
-        cout <<"No hay memoria";
-    *inst = NULL;
-}
-
-void Profesor:: setInst (char *m){
+void Profesor:: setInst ( string m){
     inst = m;
 }
 
-char * Profesor :: getInst(){
+string Profesor :: getInst(){
     return inst;
 }
 
@@ -104,25 +99,18 @@ void Profesor :: show (){
 //__________________________________________________________________________________________
 class Administrativo: public Persona
 {
-	char *job;
+	string job;
 	public:
-        void IniM (); 
-		void setJob(char *);
-		char * getJob();
+		void setJob( string );
+		string getJob();
 		void show();
 };
 
-void Administrativo :: IniM (){
-    job = (char *) malloc (sizeof (char));
-    if (job  == NULL)
-        cout <<"No hay memoria";
-    *job = NULL;
-}
-void Administrativo:: setJob (char *m){
+void Administrativo:: setJob ( string m){
     job = m;
 }
 
-char * Administrativo :: getJob(){
+string Administrativo :: getJob(){
     return job;
 }
 
@@ -131,8 +119,9 @@ void Administrativo :: show (){
     cout <<"Sexo: "<<getSex()<<endl;
 	cout <<"Edad: "<<getAge()<<endl;
 	cout <<"Cargo Admin: "<<getJob()<<endl;
-}
+}	
 
+//_________________________________________________________________________________________
 int main (){
     Estudiante s1;
     Profesor p1;
